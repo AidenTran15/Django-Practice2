@@ -52,10 +52,19 @@
         </div>
     </div>
 
-</div>
-{% block content %}
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search" placeholder="search">
+        <button class="btn waves-effect waves-light" type="submit" name="action">submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
 
-{% endblock content %}
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
     
 
 
